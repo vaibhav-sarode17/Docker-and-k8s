@@ -77,7 +77,7 @@ Task 1: Docker Lifecycle
 
 docker pull httpd
 docker image ls
-docker image history httpd
+docker image history httpd --no-trunc
 docker container create httpd
 docker container ls -a
 docker container start < replace container id/name >
