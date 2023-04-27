@@ -9,7 +9,9 @@ sudo hostnamectl set-hostname docker
 sudo su
 apt update -y
 apt install curl -y
-curl -SSL https://get.docker.com/ | sh
+curl -fsSL https://get.docker.com -o get-docker.sh
+sh  get-docker.sh
+
 service docker status
 usermod -aG docker ubuntu
 docker --version
