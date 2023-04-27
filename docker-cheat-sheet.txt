@@ -96,7 +96,7 @@ apt install wget -y
 rm index.html
 wget files.cloudthat.training/devops/docker-essentials/index.html
 exit
-docker commit < replace container id/name > myhttpd:version1
+docker commit <replace container id/name> myhttpd:version1
 docker image ls
 docker run -d -p 8080:80 myhttpd:version1
 curl < public IP>:8080
