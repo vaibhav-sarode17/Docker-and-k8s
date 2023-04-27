@@ -54,9 +54,12 @@ exit
 docker ps
 docker exec -it < replace container id/name > /bin/bash
 this command will install ps command in container
+
+apt update && apt install procps -y
+
 list all process 
 ps -elf 
-apt update && apt install procps -y
+
 to kill main process of contianer
 kill 1
 it will send you back to host machine.
