@@ -368,9 +368,7 @@ mv docker-compose /bin
 
 
 
-Task 2: Create a docker-compose.yaml for Wordpress application
-
-install docker compose 
+Task 2: Create a docker-compose.yaml for Wordpress application 
 
 
 # mkdir wordpress
