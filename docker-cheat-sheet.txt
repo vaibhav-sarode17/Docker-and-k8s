@@ -368,6 +368,14 @@ Lab 10: Docker Compose
 
 
 Task 2: Create a docker-compose.yaml for Wordpress application
+
+install docker compose 
+
+wget https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 docker-compose
+chmod +x docker-compose
+mv docker-compose /bin
+
 # mkdir wordpress
 # cd wordpress
 
