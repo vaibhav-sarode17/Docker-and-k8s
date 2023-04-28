@@ -435,8 +435,8 @@ docker system prune
 
  docker cp mango.txt 06bb94663e4d:/tmp
  docker exec -it test3  bash
- docker 06bb94663e4d:/tmp/apple.txt .
- docker cp 06bb94663e4d:/tmp/apple.txt
+ ls
+ 
  docker cp 06bb94663e4d:/tmp/apple.txt .
 
 
