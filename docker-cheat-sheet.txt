@@ -432,5 +432,7 @@ docker-compose down
  docker run -d --name test3 --memory 512M --cpus 0.5 nginx:latest
  lscpu
  docker stats
- history
+ 
 
+docker system df
+docker system prune
