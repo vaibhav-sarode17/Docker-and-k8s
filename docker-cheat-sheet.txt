@@ -424,5 +424,13 @@ docker-compose down
 
 
 
-
+ docker run -d --name test nginx:latest
+ docker run -d --name test2 --memory 512M nginx:latest
+ docker stats
+ free -h
+ docker run -d --name test2 --memory 512M --cpus 0.5 nginx:latest
+ docker run -d --name test3 --memory 512M --cpus 0.5 nginx:latest
+ lscpu
+ docker stats
+ history
 
