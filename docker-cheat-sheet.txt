@@ -361,20 +361,17 @@ docker history hello-go:v2
 
 Lab 10: Docker Compose 
 
-# wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
-# apt install python -y
-# python get-pip.py
-# pip install docker-compose
+wget https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64
+mv docker-compose-linux-x86_64 docker-compose
+chmod +x docker-compose
+mv docker-compose /bin
+
 
 
 Task 2: Create a docker-compose.yaml for Wordpress application
 
 install docker compose 
 
-wget https://github.com/docker/compose/releases/download/v2.17.2/docker-compose-linux-x86_64
-mv docker-compose-linux-x86_64 docker-compose
-chmod +x docker-compose
-mv docker-compose /bin
 
 # mkdir wordpress
 # cd wordpress
