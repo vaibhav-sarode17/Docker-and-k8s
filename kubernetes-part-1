@@ -152,7 +152,6 @@ curl http://httpd-svc
 
 kubectl get nodes -owide | awk '{print $7}'
 
-ssh -t admin@< replace Node_IP> curl < replace Cluster_IP>:< replace Service_Port>
 
 Task 3: Setup NodePort service
 
