@@ -298,6 +298,31 @@ kubectl get pod
 kubectl get svc
 
 
+Task: Ingress
+
+vi ingress.yaml
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: aneesh.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: httpd-svc
+            port:
+              number: 80
+kubectl create -f ingress.yaml
+kubectl get ing
+
+
 ******************
 Lab 3: Deployment*
 ******************
