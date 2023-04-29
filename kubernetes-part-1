@@ -64,6 +64,27 @@ kubectl exec -it multi-con-pod -c con1 -- bash
 to out of container run exit command 
 
 
+Task 4: container with command arguments
+
+vi arg-container.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-ubuntu-pod
+spec:
+  containers:
+  - name: my-ubuntu-container
+    image: ubuntu
+    command: ["/bin/sleep"]
+    args: ["3600"]
+
+kubectl create -f arg-container.yaml
+kubectl describe pod my-ubuntu-pod
+and see container block is having your command in it.
+
+
+
 Lab 2: Services in Kubernetes
 
 
