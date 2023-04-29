@@ -255,6 +255,48 @@ kubectl get pod
 
 kubectl describe pod res-limit-pod
 
+Task 7: multi-port
+vi multiport.yaml
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: jenkins
+  name: jenkins
+spec:
+  containers:
+  - image: jenkins/jenkins:lts
+    name: jenkins
+    ports:
+    - containerPort: 8080
+  - image: nginx:latest
+    name: nginx
+    ports:
+    - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-svc
+spec:
+  type: LoadBalancer
+  ports:
+  - name: jenkins
+    port: 80
+    targetPort: 8080
+  - name: nginx
+    port: 9090
+    targetPort: 80
+  selector:
+    run: jenkins
+
+kubectl create -f multiport.yaml
+kubectl get pod
+kubectl get svc
+
 
 ******************
 Lab 3: Deployment*
