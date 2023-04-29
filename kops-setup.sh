@@ -35,5 +35,5 @@ sudo mv kops /usr/local/bin/
 
 aws s3 mb s3://$clname
 
-kops create cluster --name=$clname --state=s3://$clname --node-count=2 --node-size=t2.medium --master-size=t2.medium --master-volume-size=30 --node-volume-size=30 --zones=$az --ssh-public-key ~/.ssh/id_rsa.pub --yes
+kops create cluster --name=$clname --state=s3://$clname --node-count=1 --node-size=t2.medium --master-size=t2.medium --master-volume-size=30 --node-volume-size=30 --zones=$az --ssh-public-key ~/.ssh/id_rsa.pub --yes
 
