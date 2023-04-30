@@ -524,6 +524,41 @@ your data is stored in worker dir , same you can do to take host machines data i
 
 
 
+Task: 3 init container 
+
+vi init-container.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: init-container
+spec:
+  initContainers:
+  - name: appsetup
+    image: busybox:latest
+    volumeMounts:
+    - name: shared-vol
+      mountPath: /data
+    command: ["/bin/sh"]
+    args: ["-c","echo '<h1>Hello from init containers file</h1>' > /data/index.html"] 
+  containers:
+  - name: app
+    image: nginx:latest
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: shared-vol
+      mountPath: /usr/share/nginx/html/
+  volumes:
+  - name: shared-vol
+    emptyDir: {}
+
+loginto app container 
+ kubectl exec -it init-container -c app -- bash
+apt update && apt install curl -y
+curl localhost
+
+you can see file created by init container is here..
 
 
 
