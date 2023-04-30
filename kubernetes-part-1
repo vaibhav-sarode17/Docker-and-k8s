@@ -411,6 +411,7 @@ kubectl delete -f ds-pod.yaml
 
 Lab 5: Empty Dir Volume
 
+Task: 1
 vi emp-vol-dep.yaml
 
 apiVersion: apps/v1
@@ -462,6 +463,71 @@ now login to second container and check you mango file
 kubectl exec -it <pod-name> -c con1 -- bash
 cd /data
 ls
+
+Task: 2  HostPath volume
+
+vi hostpath-volume.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: host-voldep
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: con1
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: myvol
+          mountPath: /data
+      volumes:
+      - name: myvol
+        hostPath:
+          path: /k8s-data
+
+kubectl create -f hostpath-volume.yaml
+
+kubectl get pods
+kubectl exec -it POD-ID -- bash
+cd /data
+create some files here 
+touh mango.txt apple.txt
+exit 
+
+delete deployment and recreate it to check data availability 
+
+kubectl create -f hostpath-volume.yaml
+
+kubectl get pods
+kubectl exec -it POD-ID -- bash
+cd /data
+ls
+
+exit 
+
+
+ssh ubuntu@WORKER-NODE-IP
+cd /k8s-data 
+ls
+
+your data is stored in worker dir , same you can do to take host machines data inside pod's container 
+
+
+
+
+
+
+
 
 
 Lab 6: Persistent Volume in Kubernetes using storage-class
