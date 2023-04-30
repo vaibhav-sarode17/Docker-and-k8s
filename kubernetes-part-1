@@ -370,6 +370,11 @@ kubectl exec -it <replace pod_name> -- /bin/bash
 nginx -v
 exit
 
+##  update history using annotation 
+kubectl annotate deployments.apps nginx-dep kubernetes.io/change-cause="rolled back to revision 1"
+kubectl rollout history deployment/nginx-dep
+
+
 Task 4: Scaling of Deployments
 
 kubectl get deployments
