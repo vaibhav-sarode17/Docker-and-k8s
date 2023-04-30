@@ -334,6 +334,12 @@ kubectl get deployments
 kubectl get rs
 kubectl get pods
 
+#expose deployment to access it from outside of the cluster
+kubectl expose deployment nginx-dep --type NodePort
+kubectl get svc 
+# enable port from decurity group
+
+
 kubectl exec -it <replace pod_name> -- /bin/bash
 nginx -v
 exit
