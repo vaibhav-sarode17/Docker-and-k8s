@@ -356,7 +356,13 @@ exit
 
 Task 3: Rollback of Deployment 
 
+check deployment history
 kubectl rollout history deployment/nginx-dep
+
+describe revision
+kubectl rollout history deployment nginx-dep --revision 2
+
+roll back to specific revision 
 kubectl rollout undo deployment/nginx-dep --to-revision=1
 kubectl get pods
 
