@@ -1,17 +1,17 @@
-      ### k8s kubectl commands: ### 
+### k8s kubectl commands: ### 
 
 ## get ##
-kubectl get pods   
-kubectl get pods -n #namespace   
-kubectl get nodes  
-kubectl get nodes -n #namespace  
-kubectl get svc  
-kubectl get deployment  
-kubectl get ns  
-kubectl get namespace  
-kubectl get replicaset  
-kubectl get rs  
-kubectl get ingress  
+      kubectl get pods   
+      kubectl get pods -n #namespace   
+      kubectl get nodes  
+      kubectl get nodes -n #namespace  
+      kubectl get svc  
+      kubectl get deployment  
+      kubectl get ns  
+      kubectl get namespace  
+      kubectl get replicaset  
+      kubectl get rs  
+      kubectl get ingress  
 
 ## apply ##  
 kubectl apply -f #fileName.yml  
