@@ -42,6 +42,10 @@
       kubectl delete pod -l #key=value  
       kubectl delete pod -l #key!=value  
 
+      kubectl get pods -l '#key in (#value1, value2)'
+      kubectl get pods -l '#key notin (#value1, value2)'
+      kubectl get pods -l '#key1=value1, #key2=value2'
+
 
 
 
