@@ -1,6 +1,6 @@
 # k8s kubectl commands: #
 
-## * get *
+* ## get ## * 
       kubectl get pods   
       kubectl get pods -n #namespace   
       kubectl get nodes  
