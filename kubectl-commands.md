@@ -14,18 +14,18 @@
       kubectl get ingress  
 
 ## apply ##  
-kubectl apply -f #fileName.yml  
-kubectl apply -f #fileName1.yml -f #fileName2.yml  
-kubectl apply -f .  
+      kubectl apply -f #fileName.yml  
+            kubectl apply -f #fileName1.yml -f #fileName2.yml  
+      kubectl apply -f .  
 
 ## delete ##  
-kubectl delete -f #fileName.yml  
-kubectl delete pod #podName  
-kubectl delete svc #serviceName  
-kubectl delete namespace #namespaceName  
+      kubectl delete -f #fileName.yml  
+      kubectl delete pod #podName  
+      kubectl delete svc #serviceName  
+      kubectl delete namespace #namespaceName  
 
 ## describe ##
-kubectl descibe pod #podName  
+      kubectl descibe pod #podName  
 kubectl describe pod #podName -n #namespace  
 kubectl describe svc #serviceName  
 kubectl describe node #nodeName  
