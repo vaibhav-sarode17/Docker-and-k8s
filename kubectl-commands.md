@@ -15,7 +15,7 @@
 
 ## apply ##  
       kubectl apply -f #fileName.yml  
-            kubectl apply -f #fileName1.yml -f #fileName2.yml  
+      kubectl apply -f #fileName1.yml -f #fileName2.yml  
       kubectl apply -f .  
 
 ## delete ##  
@@ -26,21 +26,21 @@
 
 ## describe ##
       kubectl descibe pod #podName  
-kubectl describe pod #podName -n #namespace  
-kubectl describe svc #serviceName  
-kubectl describe node #nodeName  
-kubectl describe deployment #deploymentName  
+      kubectl describe pod #podName -n #namespace  
+      kubectl describe svc #serviceName  
+      kubectl describe node #nodeName  
+      kubectl describe deployment #deploymentName  
 
 ## logs ##  
-kubectl logs -f #podName  
+      kubectl logs -f #podName  
 
 ## labels ##
-kubectl labels pod #podname #key=value  
-kubectl get pods --show-labels  
-kubectl get pods -l #key=value   
-kubectl get pods -l #key!=value  
-kubectl delete pod -l #key=value  
-kubectl delete pod -l #key!=value  
+      kubectl labels pod #podname #key=value
+      kubectl get pods --show-labels
+      kubectl get pods -l #key=value   
+      kubectl get pods -l #key!=value  
+      kubectl delete pod -l #key=value  
+      kubectl delete pod -l #key!=value  
 
 
 
