@@ -1,4 +1,4 @@
-### k8s kubectl commands ###
+      ### k8s kubectl commands: ### 
 
 ## get ##
 kubectl get pods   
