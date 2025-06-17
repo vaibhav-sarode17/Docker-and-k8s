@@ -1,10 +1,10 @@
 ## get ##
-kubectl get pods /n
-kubectl get pods -n #namespace /n
-kubectl get nodes
-kubectl get nodes -n #namespace
-kubectl get svc
-kubectl get deployment
+kubectl get pods   
+kubectl get pods -n #namespace   
+kubectl get nodes  
+kubectl get nodes -n #namespace  
+kubectl get svc  
+kubectl get deployment  
 kubectl get ns
 kubectl get namespace
 kubectl get replicaset
