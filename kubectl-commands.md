@@ -15,7 +15,7 @@
 
 ## apply ##  
       kubectl apply -f #fileName.yml  
-      
+
       kubectl apply -f #fileName1.yml -f #fileName2.yml  
       kubectl apply -f .  
 
