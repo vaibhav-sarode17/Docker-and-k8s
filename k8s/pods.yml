@@ -1,0 +1,78 @@
+
+# SINGLE CONTAINER POD
+
+kind: Pod                              
+apiVersion: v1                     
+metadata:                           
+  name: testpod                  
+spec:                                    
+  containers:                      
+      name: c00                     
+      image: ubuntu              
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+  restartPolicy: Never         # Defaults to Always
+
+
+************************************************************************************************************************************
+
+# MULTI CONTAINER POD 
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod3
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Technical-Guftgu; sleep 5 ; done"]
+    - name: c01
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+
+
+*********************************************************************************************************************************
+
+# POD ENVIRONMENT VARIABLES
+
+kind: Pod
+apiVersion: v1
+metadata:
+  name: environments
+spec:
+  containers:
+    - name: c00
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo Hello-Bhupinder; sleep 5 ; done"]
+      env:                        # List of environment variables to be used inside the pod
+        name: MYNAME
+        value: BHUPINDER
+
+************************************************************************************************************************************
+
+# POD WITH PORTS
+1)
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod4
+spec:
+  containers:
+    - name: c00
+      image: httpd
+      ports:
+        - containerPort: 80  
+
+2)
+apiVersion: v1
+kind: Pod
+metadata:
+  name: node-app
+spec:
+  containers:
+    - name: node-todo-app
+      image: vsarode000/my-project-app
+      ports:
+        - containerPort: 8000
+
+
