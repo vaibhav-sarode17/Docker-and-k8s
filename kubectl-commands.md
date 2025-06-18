@@ -46,6 +46,11 @@
       kubectl get pods -l '#key notin (#value1, value2)'
       kubectl get pods -l '#key1=value1, #key2=value2'
 
-
+## deployment ##
+      kubectl scale replicas=3 deployment #deploymentName
+      kubectl rollout status deployment #deploymentName
+      kubectl rollout undo deployment #deploymentName
+      kubectl rollout history deployment #deploymentName
+      
 
 
