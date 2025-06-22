@@ -12,6 +12,7 @@
       kubectl get replicaset  
       kubectl get rs  
       kubectl get ingress  
+      kubectl get hpa           #HPA - Horizontal Pod Autoscaling
 
 ## apply ##  
       kubectl apply -f #fileName.yml  
@@ -34,6 +35,9 @@
 ## logs ##  
       kubectl logs -f #podName  
 
+## access the pod ##
+      kubectl exec -it #podName/podId -- /bin/bash
+
 ## labels ##
       kubectl labels pod #podname #key=value
       kubectl get pods --show-labels
@@ -51,6 +55,23 @@
       kubectl rollout status deployment #deploymentName
       kubectl rollout undo deployment #deploymentName
       kubectl rollout history deployment #deploymentName
+
+      kubectl edit deployment #deploymentName
+      
+      kubectl rollout history deployment/#deploymentName
+      kubectl rollout history deployment #deploymentName --revision 2
+      kubectl rollout undo deployment/#deploymentName --to-revision=1
+      kubectl annotate deployments.apps #deploymentName kubernetes.io/change-cause="rolled back to revision 1"
       
 
+      kubectl expose deployment #deploymentName --type NodePort
+      kubectl set image deployment/#deploymentName nginx-ctr=nginx:1.11 --record
+
+      kubectl scale deployment #deploymentName --replicas=8
+
+## Deployment Auto Scaling HPA - Horizontal Pod Autoscaling ##
+      kubectl autoscale deployment #deploymentName --min=3 --max=8 --cpu-percent=70
+      kubectl get hpa
+
+      
 
