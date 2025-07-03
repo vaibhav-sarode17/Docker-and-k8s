@@ -18,3 +18,22 @@ resource "docker_container" "my_container" {
         }
         depends_on = [docker_image.my_image]
 }
+
+
+resource "aws_s3_bucket" "my_bucket" {
+        bucket = "new-bucket-1704"
+        tags = {
+                Name = "test-bucket"
+        }
+}
+
+resource "aws_instance" "my-instance" {
+        ami = "ami-0c803b171269e2d72"
+        instance_type = "t2.micro"
+        availability_zone = "us-east-2b"
+        key_name = "d-practice-keypair"
+
+        tags = {
+                Name = "my-test-instance"
+        }
+}
